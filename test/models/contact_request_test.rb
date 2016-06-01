@@ -40,8 +40,8 @@ class ContactRequestTest < ActiveSupport::TestCase
     assert_not @contact_request.valid?
   end
 
-  test "permission should be less than 100 characters" do
-    @contact_request.permission = "a" * 101
-    assert_not @contact_request.valid?
-  end
+  # test "permission should be less than 100 characters" do
+  #   @contact_request.permission = "a" * 101
+  #   assert_not @contact_request.valid?
+  # end
 end

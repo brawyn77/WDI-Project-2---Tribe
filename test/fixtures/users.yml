@@ -4,12 +4,11 @@ one:
   first_name: Brad
   last_name: Wynter
   email: brad@example.com
-  password: password
-  password_confirmation: password
+  password_digest: password
+
 
 two:
   first_name: David
   last_name: Wynter
   email: david@example.com
-  password: password
-  password_confirmation: password
+  password_digest: password
