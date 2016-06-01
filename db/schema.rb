@@ -11,13 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530234226) do
+ActiveRecord::Schema.define(version: 20160531061701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "contact_requests", force: :cascade do |t|
+    t.string   "request"
+    t.string   "from"
+    t.string   "to"
+    t.boolean  "permission"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "user_from"
+    t.string   "user_to"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
-    t.string   "name"
     t.string   "username"
     t.text     "address"
     t.integer  "postcode"
@@ -27,15 +45,18 @@ ActiveRecord::Schema.define(version: 20160530234226) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "user_id"
+    t.string   "suburb"
+    t.integer  "age"
   end
 
   create_table "users", force: :cascade do |t|
-    t.text     "name"
+    t.text     "first_name"
     t.string   "email"
     t.string   "password"
     t.string   "password_confirmation"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "last_name"
   end
 
 end

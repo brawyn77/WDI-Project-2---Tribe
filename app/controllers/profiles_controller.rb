@@ -24,16 +24,17 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(profile_params)
-
+    @profile = Profile.create(profile_params)
+    puts @profile.errors.full_messages.join(', ')
+    puts params[:profile]
     respond_to do |format|
-      if @profile.save
+      # if @profile.save
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
-      else
-        format.html { render :new }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
-      end
+      # else
+      #   format.html { render :new }
+      #   format.json { render json: @profile.errors, status: :unprocessable_entity }
+      # end
     end
   end
 
@@ -69,6 +70,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:name, :username, :address, :postcode, :search_radius, :sex, :interests)
+      params.require(:profile).permit(:username, :address, :postcode, :search_radius, :sex, :interests)
     end
 end

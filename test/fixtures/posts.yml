@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_from: brawyn
+  user_to: dawyn
+  message: Hi David
+
+two:
+  user_from: dawyn
+  user_to: brawyn
+  message: Hello Brad

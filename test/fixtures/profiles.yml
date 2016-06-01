@@ -1,19 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  username: MyString
-  address: MyText
-  postcode: 
-  search_radius: 
-  sex: MyString
-  interests: MyText
+  username: brawyn
+  address: 56 Eastern Ridge
+  suburb: Wallan
+  postcode: 3756
+  search_radius: 2
+  sex: M
+  age: 57
+  interests: Racing
 
 two:
-  name: MyString
-  username: MyString
-  address: MyText
-  postcode: 
-  search_radius: 
-  sex: MyString
-  interests: MyText
+  username: dawyn
+  address: 103 Brently Way
+  suburb: North Balwyn
+  postcode: 3104
+  search_radius: 3
+  age: 59
+  sex: M
+  interests: Cycling

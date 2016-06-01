@@ -3,8 +3,6 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
-
 * Ruby version
 
 * System dependencies
@@ -23,6 +21,20 @@ Things you may want to cover:
 
 * ...
 
+Testing specs for Tribe:
+User name:text - must be present and between 1 - 50 chars
+User email:string - must be present and between 1 - 50 chars
+User password:string - must be present and between 8 - 50 chars
+User password_confirmation:string - must be present and between 8 - 50 chars
+user_id must be present
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+Profile name:text - must come from User table
+Profile username:string - must be present and between 8 - 50 chars
+Profile address:text - must be present and between 8 - 50 chars
+Profile suburb:string - must be present and between 2 - 30 chars
+Profile postcode:integer - must be present and a integer and be 4 numbers
+Profile search_radius:integer - must be present and a integer between 0 - 2000
+Profile age:integer - must be present and a integer between 0 - 130
+Profile sex:string - must be present and be between 1 - 4 chars
+Profile interests:text - must be present and be between 1 -100 chars
