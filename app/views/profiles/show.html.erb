@@ -1,34 +1,35 @@
 <p id="notice"><%= notice %></p>
+<ul>
+  <li>
+    <strong>Username:</strong>
+    <%= @profile.username %>
+  </li>
 
-<p>
-  <strong>Username:</strong>
-  <%= @profile.username %>
-</p>
+  <li>
+    <strong>Address:</strong>
+    <%= @profile.address %>
+  </li>
 
-<p>
-  <strong>Address:</strong>
-  <%= @profile.address %>
-</p>
+  <li>
+    <strong>Postcode:</strong>
+    <%= @profile.postcode %>
+  </li>
 
-<p>
-  <strong>Postcode:</strong>
-  <%= @profile.postcode %>
-</p>
+  <li>
+    <strong>Search radius:</strong>
+    <%= @profile.search_radius %>
+  </li>
 
-<p>
-  <strong>Search radius:</strong>
-  <%= @profile.search_radius %>
-</p>
+  <li>
+    <strong>Sex:</strong>
+    <%= @profile.sex %>
+  </li>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @profile.sex %>
-</p>
-
-<p>
-  <strong>Interests:</strong>
-  <%= @profile.interests %>
-</p>
+  <li>
+    <strong>Interests:</strong>
+    <%= @profile.interests %>
+  </li>
+</ul>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>

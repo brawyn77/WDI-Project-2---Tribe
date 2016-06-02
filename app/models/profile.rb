@@ -1,5 +1,8 @@
 class Profile < ActiveRecord::Base
+  # Set up relationship to user table
   belongs_to :user
+
+  # Validation for the profile table fields
   validates :username, presence: true, length: {minimum: 8, maximum: 50}
   validates :address, presence: true, length: {minimum: 8, maximum: 50}
   validates :suburb, presence: true, length: {minimum: 2, maximum: 30}

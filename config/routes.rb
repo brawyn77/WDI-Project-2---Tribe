@@ -1,60 +1,39 @@
 Rails.application.routes.draw do
+# Establish scaffolding for the four tables and their data
   resources :posts
   resources :contact_requests
   resources :profiles
   resources :users
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+# Set front page as root
+  root to: 'users#homepage'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+# Manage the first interaction with the user registering by routing to the registration form
+  get '/user_new' => 'users#new'
+  post '/user_create' => 'users#create'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+# Manage the logon screen
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+# Manage the link to the profile page via a new profile form
+  get '/profile_index' => 'profiles#new'
+  post '/profiles' => 'profiles#create'
+  get '/profile_show' => 'profiles#show'
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+# Manage the link to the profile search page
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+# Manage the link to the new contact request page via a form
+  delete '/users/destroy' => 'users#destroy'
+  get '/users/new' => 'users#new'
+  post '/users' => 'users#create'
+  patch 'users/update' => 'users#update'
+  get '/users/edit' => 'users#edit'
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+# Manage the link to the show contact requests
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+# Manage the link to the Messages screen
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+# Manage the link to the new message screen via a form
+
 end

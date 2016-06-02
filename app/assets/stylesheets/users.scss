@@ -1,3 +1,56 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ // Set up menu bar
+
+div.menu_bar {
+  width: 100%;
+  padding: 2px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: right;
+    margin-right: 20px;
+    padding: 5px 5px;
+    text-decoration: none;
+}
+
+/* Change the link color to #C0C0C0 (grey) on hover */
+li a:hover {
+    background-color: #C0C0C0;
+}
+
+#tribe {
+  float: left;
+  margin-left: 50px;
+}
+
+p {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 10%;
+  display: float;
+}
+
+#reg {
+  text-align: right;
+  margin-right: 40%;
+  margin-top: 20%;
+}
+
+#prof {
+  text-align: right;
+  margin-right: 40%;
+  margin-top: 10%;
+}

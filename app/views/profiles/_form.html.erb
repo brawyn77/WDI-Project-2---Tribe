@@ -20,16 +20,24 @@
     <%= f.text_area :address %>
   </div>
   <div class="field">
+    <%= f.label :suburb %><br>
+    <%= f.text_field :suburb %>
+  </div>
+  <div class="field">
     <%= f.label :postcode %><br>
-    <%= f.text_field :postcode %>
+    <%= f.number_field :postcode %>
   </div>
   <div class="field">
     <%= f.label :search_radius %><br>
-    <%= f.text_field :search_radius %>
+    <%= f.number_field :search_radius %>
   </div>
   <div class="field">
     <%= f.label :sex %><br>
     <%= f.text_field :sex %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
   </div>
   <div class="field">
     <%= f.label :interests %><br>
