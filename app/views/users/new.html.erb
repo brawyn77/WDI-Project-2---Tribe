@@ -4,7 +4,7 @@
   <p><%=flash[:errors]['errors'].join(', ') %></p>
 <% end %>
 <div id="reg">
-<%= form_for :user, url: '/users' do |f| %>
+<%= form_for :user, url: '/user_new' do |f| %>
   <span>Email: <%= f.text_field :email %></span><br>
   <span>First name: <%= f.text_field :first_name %></span><br>
   <span>Last name: <%= f.text_field :last_name %></span><br>

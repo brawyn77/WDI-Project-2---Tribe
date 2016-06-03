@@ -14,6 +14,7 @@
   <span>Sex: <%= f.select :sex, "<option>M</option><option>F</option>".html_safe %></span><br>
   <span>Age: <%= f.number_field :age %></span><br>
   <span>Interests: <%= f.select :interests, "<option>Cycling</option><option>Sewing</option><option>Reading</option><option>Programming</option>".html_safe %></span><br>
+
   <%= f.submit("My Profile") %></span><br>
 
 <%= link_to 'Back', profiles_path %>

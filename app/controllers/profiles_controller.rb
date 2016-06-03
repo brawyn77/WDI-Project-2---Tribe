@@ -1,3 +1,4 @@
+
 class ProfilesController < ApplicationController
 
   # GET /profiles
@@ -14,20 +15,27 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    @profile = Profile.new
-    if current_user
-      redirect_to action: 'new'
-    end
+    # grabbing API
+      suburbs = HTTParty.get('http://v0.postcodeapi.com.au/suburbs/3756.json')
+      radius = HTTParty.get('http://v0.postcodeapi.com.au/radius.json?distance=4000&latitude=-38&longitude=145')
+
+    # making accessible by ERB under a variable
+      @suburbs = suburbs
+      @radius = radius
+
+    # extracting the options for each postcode
+
   end
 
   # GET /profiles/1/edit
   def edit
+    
   end
 
   # POST /profiles
   def create
     @profile = Profile.create(profile_params)
-    @profile.user = current_user
+    @profile.user_id = current_user.id
     @profile.save
     session[:profile_id] = @profile.id
 

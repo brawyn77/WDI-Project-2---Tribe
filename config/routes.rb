@@ -7,14 +7,15 @@ Rails.application.routes.draw do
 
 # Set front page as root
   root to: 'users#homepage'
+  get '/user_about' => 'users#about'
 
 # Manage the first interaction with the user registering by routing to the registration form
   get '/user_new' => 'users#new'
   post '/user_new' => 'users#create'
 
 # Manage the logon screen
-  post '/login' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
+  post '/user_login' => 'sessions#create'
+  post '/user_logout' => 'sessions#destroy'
 
 # Manage the link to the profile page via a new profile form
   get '/profile_new' => 'profiles#new'
