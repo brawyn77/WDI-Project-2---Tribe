@@ -10,25 +10,26 @@ Rails.application.routes.draw do
 
 # Manage the first interaction with the user registering by routing to the registration form
   get '/user_new' => 'users#new'
-  post '/user_create' => 'users#create'
+  post '/user_new' => 'users#create'
 
 # Manage the logon screen
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
 # Manage the link to the profile page via a new profile form
-  get '/profile_index' => 'profiles#new'
-  post '/profiles' => 'profiles#create'
+  get '/profile_new' => 'profiles#new'
+  post '/profile_new' => 'profiles#create'
   get '/profile_show' => 'profiles#show'
+  post '/profile_show' => 'profiles#show'
 
 # Manage the link to the profile search page
 
 # Manage the link to the new contact request page via a form
-  delete '/users/destroy' => 'users#destroy'
-  get '/users/new' => 'users#new'
-  post '/users' => 'users#create'
-  patch 'users/update' => 'users#update'
-  get '/users/edit' => 'users#edit'
+  delete '/user_destroy' => 'users#destroy'
+  get '/user_new' => 'users#new'
+  post '/user' => 'users#create'
+  patch 'user_update' => 'users#update'
+  get '/user_edit' => 'users#edit'
 
 # Manage the link to the show contact requests
 

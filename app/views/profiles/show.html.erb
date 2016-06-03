@@ -1,5 +1,21 @@
 <p id="notice"><%= notice %></p>
 <ul>
+
+  <li>
+    <strong>First name:</strong>
+    <%= current_user.profile.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @user.last_name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </li>
+
   <li>
     <strong>Username:</strong>
     <%= @profile.username %>
