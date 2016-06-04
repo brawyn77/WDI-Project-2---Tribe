@@ -1,15 +1,23 @@
-<h1>New User Registration</h1>
 
+<div id="menu_bar">
+  <ul>
+    <li><a href="/"><h1>New Registration</h1></a></li>
+    <li><a href="user_about"><h3>About</h3></a></li>
+    <li><a href="/user_login"><h3>Login</h3></a></li>
+    <li><a href="/user_new"><h3>Register</h3></a></li>
+  </ul>
+</div>
+<div id="colorstrip2"/>
 <% if flash[:errors] %>
   <p><%=flash[:errors]['errors'].join(', ') %></p>
 <% end %>
 <div id="reg">
 <%= form_for :user, url: '/user_new' do |f| %>
-  <span>Email: <%= f.text_field :email %></span><br>
-  <span>First name: <%= f.text_field :first_name %></span><br>
-  <span>Last name: <%= f.text_field :last_name %></span><br>
-  <span>Password: <%= f.text_field :password %></span><br>
-  <span>Password Confirmation: <%= f.password_field :password_confirmation %></span><br>
-  <span><%= f.submit("Register") %></span><br>
+  <span><strong>Email: </strong><%= f.text_field :email %></span><br>
+  <span><strong>First name: </strong><%= f.text_field :first_name %></span><br>
+  <span><strong>Last name: </strong><%= f.text_field :last_name %></span><br>
+  <span><strong>Password: </strong><%= f.text_field :password %></span><br>
+  <span><strong>Password Confirmation: </strong><%= f.password_field :password_confirmation %></span><br>
+  <%= f.submit "Submit", id: 'buttonmagic' %>
 <% end %>
 </div>

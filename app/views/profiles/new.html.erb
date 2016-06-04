@@ -1,22 +1,28 @@
-<h1>New Profile</h1>
-
+<div id="menu_bar">
+  <ul>
+    <li><a href="/"><h1>New Profile</h1></a></li>
+    <li><a href="user_about"><h3>About</h3></a></li>
+    <li><a href="/user_login"><h3>Login</h3></a></li>
+    <li><a href="/user_new"><h3>Register</h3></a></li>
+  </ul>
+</div>
+<div id="colorstrip2"/>
 <% if flash[:errors] %>
   <p><%= flash[:errors] %></p>
 <% end %>
 
-<div id="prof">
-<%= form_for :profile, url: '/profile_new' do |f| %>
-  <span>Address: <%= f.text_field :address %></span><br>
-  <span>Username: <%= f.text_field :username %></span><br>
-  <span>Suburb: <%= f.text_field :suburb %></span><br>
-  <span>Postcode: <%= f.number_field :postcode %></span><br>
-  <span>Search Radius: <%= f.number_field :search_radius %></span><br>
-  <span>Sex: <%= f.select :sex, "<option>M</option><option>F</option>".html_safe %></span><br>
-  <span>Age: <%= f.number_field :age %></span><br>
-  <span>Interests: <%= f.select :interests, "<option>Cycling</option><option>Sewing</option><option>Reading</option><option>Programming</option>".html_safe %></span><br>
+<div id="reg">
+  <%= form_for :profile, url: '/profile_new' do |f| %>
+    <span><strong>Address: </strong><%= f.text_field :address %></span><br>
+    <span><strong>Username: </strong><%= f.text_field :username %></span><br>
+    <span><strong>Suburb: </strong><%= f.text_field :suburb %></span><br>
+    <span><strong>Postcode: </strong><%= f.number_field :postcode %></span><br>
+    <span><strong>Search Radius: </strong><%= f.number_field :search_radius %></span><br>
+    <span><strong>Sex: </strong><%= f.select :sex, "<option>M</option><option>F</option>".html_safe %></span><br>
+    <span><strong>Age: </strong><%= f.number_field :age %></span><br>
+    <span><strong>Interests: </strong><%= f.select :interests, "<option>Cycling</option><option>Sewing</option><option>Reading</option><option>Programming</option>".html_safe %></span><br>
 
-  <%= f.submit("My Profile") %></span><br>
-
-<%= link_to 'Back', profiles_path %>
-<% end %>
+    <%= f.submit "My Profile", id: 'buttonmagic' %>
+    <%= link_to 'Back', profiles_path %>
+  <% end %>
 </div>

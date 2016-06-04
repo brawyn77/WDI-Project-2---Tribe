@@ -1,57 +1,98 @@
  // Set up menu bar
 
-div.menu_bar {
+ #menu_bar {
+  display: block;
   width: 100%;
+  height: 60px;
   padding: 2px;
+
 }
 
+// Display form based information for all relevent pages
+#reg {
+  text-align: right;
+  margin-right: 40%;
+  margin-top: 15%;
+}
+
+#show {
+  text-align: left;
+  margin-left: 40%;
+  margin-top: 15%;
+}
+
+* {
+  font-family: Arial;
+}
+
+// Fix underline link problem
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Fix underline link problem and seperate the main heading from the other menu items
+h1 {
+  float: left;
+  margin-left: 10px;
+  text-decoration: none !important;
+}
+
+h3 {
+  float: right;
+  margin-right: 20px;
+  text-decoration: none !important;
+}
 ul {
     list-style-type: none;
-    margin-right: 30%;
+    text-decoration: none;
+    margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #FFFFFF;
-    float: right;
 }
 
 li {
-
-}
-
-li a {
-    display: block;
-    color: black;
-    text-align: right;
-    margin-right: 20px;
-    padding: 5px 5px;
     text-decoration: none;
+    margin-right: 20px;
+    padding: 0;
 }
 
-/* Change the link color to #C0C0C0 (grey) on hover */
-li a:hover {
-    background-color: #C0C0C0;
-}
-
-#tribe {
-  float: left;
-  margin-left: 50px;
+/* Change the link color to #FFA500 (orange) on hover */
+li a :hover {
+  color: #FFA500;
 }
 
 p {
   margin-left: 100px;
   margin-right: 100px;
-  margin-top: 10%;
+  margin-top: 3%;
   display: float;
 }
 
-#reg {
-  text-align: right;
-  margin-right: 40%;
-  margin-top: 20%;
+#colorstrip {
+    width: 100%; height: 250px;
+    border-style: solid;
+    border-color: #FFB044;
+    background-color: #FFA500;
 }
 
-#prof {
-  text-align: right;
-  margin-right: 40%;
-  margin-top: 10%;
+#colorstrip2 {
+    width: 100%; height: 100px;
+    border-style: solid;
+    border-color: #FFB044;
+    background-color: #FFA500;
+}
+
+#about {
+  color: white;
+  text-shadow: 2px 2px #800080;
+}
+
+#buttonmagic {
+  margin-top: 3px;
+  margin-right: 40px;
+  background: orange;
+  color: white;
+  border-radius: 15px;
+  text-shadow: 1px 1px #800080;
 }

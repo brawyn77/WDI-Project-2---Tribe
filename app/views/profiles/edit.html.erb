@@ -1,6 +1,24 @@
-<h1>Editing Profile</h1>
+<div id="menu_bar">
+  <ul>
+    <li><a href="/"><h1>Editing <%= current_user.email %></h1></a></li>
+    <li><a href="user_about" ><h3>About</h3></a></li>
+    <li><a href="/user_login"><h3>Login</h3></a></li>
+    <li><a href="/user_new"><h3>Register</h3></a></li>
+  </ul>
+</div>
 
-<%= render 'form' %>
+<div id="colorstrip2"/>
 
-<%= link_to 'Show', @profile %> |
-<%= link_to 'Back', profiles_path %>
+<div id="reg">
+  <%= form_for current_user.profile, url: '/profile_path', method: :patch do |f| %>
+    <span><strong>Address: </strong><%= f.text_field :address %></span><br>
+    <span><strong>Username: </strong><%= f.text_field :username %></span><br>
+    <span><strong>Suburb: </strong><%= f.text_field :suburb %></span><br>
+    <span><strong>Postcode: </strong><%= f.number_field :postcode %></span><br>
+    <span><strong>Search Radius: </strong><%= f.number_field :search_radius %></span><br>
+    <span><strong>Sex: </strong><%= f.select :sex, "<option>M</option><option>F</option>".html_safe %></span><br>
+    <span><strong>Age: </strong><%= f.number_field :age %></span><br>
+    <span><strong>Interests: </strong><%= f.select :interests, "<option>Cycling</option><option>Sewing</option><option>Reading</option><option>Programming</option>".html_safe %></span><br>
+    <%= f.submit "Update My Profile", id: 'buttonmagic'  %>
+  <% end %>
+</div>

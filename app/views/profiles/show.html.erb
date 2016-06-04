@@ -1,61 +1,25 @@
-<p id="notice"><%= notice %></p>
-<ul>
+<div id="menu_bar">
+  <ul>
+    <li><a href="/"><h1>My Profile</h1></a></li>
+    <li><a href="user_about"><h3>About</h3></a></li>
+    <li><a href="/user_login"><h3>Login</h3></a></li>
+    <li><a href="/user_new"><h3>Register</h3></a></li>
+  </ul>
+</div>
+<div id="colorstrip2"/>
+<div id="show">
+    <span><strong>First name: </strong><%= current_user.first_name %></span><br>
+    <span><strong>Last name: </strong><%= current_user.last_name %></span><br>
+    <span><strong>Email: </strong><%= current_user.email %></span><br>
+    <span><strong>Username: </strong><%= current_user.profile.username %></span><br>
+    <span><strong>Address: </strong><%= current_user.profile.address %></span><br>
+    <span><strong>Suburb: </strong><%= current_user.profile.suburb %></span><br>
+    <span><strong>Postcode: </strong><%= current_user.profile.postcode %></span><br>
+    <span><strong>Search radius: </strong><%= current_user.profile.search_radius %></span><br>
+    <span><strong>Sex: </strong><%= current_user.profile.sex %></span><br>
+    <span><strong>Age: </strong><%= current_user.profile.age %></span><br>
+    <span><strong>Interests: </strong><%= current_user.profile.interests %></span><br>
 
-  <li>
-    <strong>First name:</strong>
-      <%= current_user.first_name %>
-  </li>
-
-  <li>
-    <strong>Last name:</strong>
-    <%= current_user.last_name %>
-  </li>
-
-  <li>
-    <strong>Email:</strong>
-    <%= current_user.email %>
-  </li>
-
-  <li>
-    <strong>Username:</strong>
-    <%= current_user.profile.username %>
-  </li>
-
-  <li>
-    <strong>Address:</strong>
-    <%= current_user.profile.address %>
-  </li>
-
-  <li>
-    <strong>Suburb:</strong>
-    <%= current_user.profile.suburb %>
-  </li>
-
-  <li>
-    <strong>Postcode:</strong>
-    <%= current_user.profile.postcode %>
-  </li>
-
-  <li>
-    <strong>Search radius:</strong>
-    <%= current_user.profile.search_radius %>
-  </li>
-
-  <li>
-    <strong>Sex:</strong>
-    <%= current_user.profile.sex %>
-  </li>
-
-  <li>
-    <strong>Age:</strong>
-    <%= current_user.profile.age %>
-  </li>
-
-  <li>
-    <strong>Interests:</strong>
-    <%= current_user.profile.interests %>
-  </li>
-</ul>
-
-<%= link_to 'Edit', edit_profile_path(current_user) %>
-<!-- < link_to 'Back', profile_path > -->
+    <%= link_to 'Edit', edit_profile_path(current_user) %>
+  <!-- < link_to 'Back', profile_path > -->
+</div>

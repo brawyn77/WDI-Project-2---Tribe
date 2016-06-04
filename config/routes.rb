@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   post '/profile_new' => 'profiles#create'
   get '/profile_show' => 'profiles#show'
   post '/profile_show' => 'profiles#show'
+  get '/profile_edit' => 'profiles#edit'
+  patch '/profile_path' => 'profiles#update'
 
 # Manage the link to the profile search page
 

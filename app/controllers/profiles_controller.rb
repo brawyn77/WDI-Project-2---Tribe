@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-    
+
   end
 
   # POST /profiles
@@ -52,8 +52,8 @@ class ProfilesController < ApplicationController
 
   # PATCH/PUT /profiles/1
   def update
-  current_user.profile.update_attributes(profile_params)
-  redirect_to root_path
+  # current_user.profile.update_attributes(profile_params)
+  # redirect_to "/profile_update"
   end
 
   # DELETE /profiles/1
