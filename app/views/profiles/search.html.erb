@@ -14,5 +14,9 @@
   <span><strong>Longitude: </strong><%= @result2 %></span><br>
   <span><strong>Radius: </strong><%= @radius_current_user %></span><br>
   <span><strong>Postcodes: </strong><%= @result3 %></span><br>
-  <span><strong>Users in the area: </strong><%= @result5 %></span><br>
+  <span><strong>Users in the area: </strong></span><br>
+  <span><%= @result5 %></span><br>
+
+<button id='buttonmagic'><%= link_to 'Show Profile', profile_show_path %></button>
+<button id='buttonmagic'><%= link_to 'Logout', user_logout_path, method: :post %></button>
 </div>

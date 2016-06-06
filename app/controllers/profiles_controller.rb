@@ -29,10 +29,8 @@ class ProfilesController < ApplicationController
     @radius_current_user = current_user.profile.search_radius.to_s
     radius = HTTParty.get('http://v0.postcodeapi.com.au/radius.json?distance='+@radius_current_user+'&latitude='+@result+'&longitude='+@result2+'')
 
-    @radius_result = radius
-
-    result3 = @radius_result[0]['postcode']
-    @result3 = result3
+    @radius = radius
+    @result3 = @radius[0]['postcode']
 
     @result4 = Profile.where(:postcode => @result3)
 
@@ -40,7 +38,6 @@ class ProfilesController < ApplicationController
     @result4.each do |e|
       @result5.push(e.username)
     end
-
 
   end
 

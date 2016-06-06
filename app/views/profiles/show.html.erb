@@ -23,4 +23,5 @@
     <button id='buttonmagic'><%= link_to 'Edit Profile', edit_profile_path(current_user) %></button>
     <button id='buttonmagic'><%= link_to 'Delete User', user_path(current_user), method: :delete %></button>
     <button id='buttonmagic'><%= link_to 'Search Profiles', profile_search_path %></button>
+    <button id='buttonmagic'><%= link_to 'Logout', user_logout_path, method: :post %></button>
 </div>

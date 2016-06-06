@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 # Manage the logon screen
   get '/user_login' => 'sessions#new'
   post '/user_login' => 'sessions#create'
+  get 'user_logout' => 'sessions#destroy'
   post '/user_logout' => 'sessions#destroy'
 
 # Manage the link to the profile page via a new profile form
