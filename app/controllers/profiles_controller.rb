@@ -30,6 +30,10 @@ class ProfilesController < ApplicationController
     radius = HTTParty.get('http://v0.postcodeapi.com.au/radius.json?distance='+@radius_current_user+'&latitude='+@result+'&longitude='+@result2+'')
 
     @radius_result = radius
+    result3 = @radius_result[0]['postcode']
+    @result3 = result3
+
+      @result4 = Profile.where("postcode = #{@result3}")
 
   end
 
