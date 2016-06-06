@@ -10,19 +10,26 @@ class ProfilesController < ApplicationController
   end
 
   # GET /profiles/1
-  def show
-    # grabbing API
-    # @searcher = current_user.profile.suburb
-    #   suburbs = HTTParty.get('http://v0.postcodeapi.com.au/suburbs/'+@searcher+'.json')
-    #   puts suburbs{latitude, longitude}
-    #
-    #   radius = HTTParty.get('http://v0.postcodeapi.com.au/radius.json?distance=4000&latitude=-38&longitude=145')
+  def search
+    # Finding Profile for logged in user
+    @profile = Profile.find_by user_id: 'current_user.id'
+
+    # # grabbing API
+    @searcher = current_user.profile.postcode.to_s
+
+    suburbs = HTTParty.get('http://v0.postcodeapi.com.au/suburbs/'+@searcher+'.json')
+    @suburbs = suburbs
+    result = @suburbs[0]['latitude']
+    result2 = @suburbs[0]['longitude']
 
     # making accessible by ERB under a variable
-      # @suburbs = suburbs
-      # @radius = radius
+      @result = result.to_s
+      @result2 = result2.to_s
 
-    # extracting the options for each postcode
+    @radius_current_user = current_user.profile.search_radius.to_s
+    radius = HTTParty.get('http://v0.postcodeapi.com.au/radius.json?distance='+@radius_current_user+'&latitude='+@result+'&longitude='+@result2+'')
+
+    @radius_result = radius
 
   end
 
@@ -63,7 +70,7 @@ class ProfilesController < ApplicationController
   def destroy
     current_user.profile.delete
     flash[:message] = "Profile successfully deleted"
-    redirect_to root_path
+    redirect_to user_logout_path
   end
 
   private

@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   if user && user.authenticate(params[:password])
     # saver the user id inside the browser cookie and log them in
     session[:user_id] = user.id
-    redirect_to '/'
+    redirect_to profile_show_path(current_user)
   else
     redirect_to profile_show_path(current_user)
   end

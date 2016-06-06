@@ -21,6 +21,6 @@
     <span><strong>Interests: </strong><%= current_user.profile.interests %></span><br>
 
     <button id='buttonmagic'><%= link_to 'Edit Profile', edit_profile_path(current_user) %></button>
-    <button id='buttonmagic'><%= link_to 'Delete Profile', profile_path(current_user) %></button>
-    <button id='buttonmagic'><%= link_to 'Edit Profiles', edit_profile_path(current_user) %></button>
+    <button id='buttonmagic'><%= link_to 'Delete User', user_path(current_user), method: :delete %></button>
+    <button id='buttonmagic'><%= link_to 'Search Profiles', profile_search_path %></button>
 </div>

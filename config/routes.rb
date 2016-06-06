@@ -22,11 +22,11 @@ Rails.application.routes.draw do
   get '/profile_new' => 'profiles#new'
   post '/profile_new' => 'profiles#create'
   get '/profile_show' => 'profiles#show'
-  post '/profile_show' => 'profiles#show'
   get '/profile_edit' => 'profiles#edit'
   patch '/profile_path' => 'profiles#update'
 
 # Manage the link to the profile search page
+  get '/profile_search' => 'profiles#search'
 
 # Manage the link to the new contact request page via a form
   delete '/user_destroy' => 'users#destroy'
