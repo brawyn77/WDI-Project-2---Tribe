@@ -22,7 +22,7 @@
     <span><strong>Age: </strong><%= f.number_field :age %></span><br>
     <span><strong>Interests: </strong><%= f.select :interests, "<option>Cycling</option><option>Sewing</option><option>Reading</option><option>Programming</option>".html_safe %></span><br>
 
-    <%= f.submit "My Profile", id: 'buttonmagic' %>
-    <%= link_to 'Back', profiles_path %>
+    <%= f.submit "Submit", id: 'buttonmagic' %>
+    <button id='buttonmagic'><%= link_to 'Back', user_edit_path(current_user) %></button>
   <% end %>
 </div>

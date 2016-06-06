@@ -20,6 +20,7 @@
     <span><strong>Age: </strong><%= current_user.profile.age %></span><br>
     <span><strong>Interests: </strong><%= current_user.profile.interests %></span><br>
 
-    <%= link_to 'Edit', edit_profile_path(current_user) %>
-  <!-- < link_to 'Back', profile_path > -->
+    <button id='buttonmagic'><%= link_to 'Edit Profile', edit_profile_path(current_user) %></button>
+    <button id='buttonmagic'><%= link_to 'Delete Profile', profile_path(current_user) %></button>
+    <button id='buttonmagic'><%= link_to 'Edit Profiles', edit_profile_path(current_user) %></button>
 </div>

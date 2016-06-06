@@ -1,4 +1,5 @@
-
+# The profiles controller manages the users individual profiles.
+# It includes creating, showing, editing, updating and deleting profiles.
 class ProfilesController < ApplicationController
 
   # GET /profiles
@@ -10,20 +11,23 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1
   def show
+    # grabbing API
+    # @searcher = current_user.profile.suburb
+    #   suburbs = HTTParty.get('http://v0.postcodeapi.com.au/suburbs/'+@searcher+'.json')
+    #   puts suburbs{latitude, longitude}
+    #
+    #   radius = HTTParty.get('http://v0.postcodeapi.com.au/radius.json?distance=4000&latitude=-38&longitude=145')
+
+    # making accessible by ERB under a variable
+      # @suburbs = suburbs
+      # @radius = radius
+
+    # extracting the options for each postcode
 
   end
 
   # GET /profiles/new
   def new
-    # grabbing API
-      suburbs = HTTParty.get('http://v0.postcodeapi.com.au/suburbs/3756.json')
-      radius = HTTParty.get('http://v0.postcodeapi.com.au/radius.json?distance=4000&latitude=-38&longitude=145')
-
-    # making accessible by ERB under a variable
-      @suburbs = suburbs
-      @radius = radius
-
-    # extracting the options for each postcode
 
   end
 
@@ -39,7 +43,6 @@ class ProfilesController < ApplicationController
     @profile.save
     session[:profile_id] = @profile.id
 
-    # puts params[:profile]
     respond_to do |format|
       if @profile.save
         format.html { redirect_to '/profile_show', notice: 'Profile was successfully created.' }
@@ -52,8 +55,8 @@ class ProfilesController < ApplicationController
 
   # PATCH/PUT /profiles/1
   def update
-  # current_user.profile.update_attributes(profile_params)
-  # redirect_to "/profile_update"
+    current_user.profile.update_attributes(profile_params)
+    redirect_to profile_show_path(current_user)
   end
 
   # DELETE /profiles/1

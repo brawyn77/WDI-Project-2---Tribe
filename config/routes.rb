@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post '/user_new' => 'users#create'
 
 # Manage the logon screen
+  get '/user_login' => 'sessions#new'
   post '/user_login' => 'sessions#create'
   post '/user_logout' => 'sessions#destroy'
 
