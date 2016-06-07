@@ -34,3 +34,7 @@ Profile sex:string - must be present and be between 1 - 4 chars
 Profile interests:text - must be present and be between 1 -100 chars
 
 The second stage will be completed outside this project.
+
+This is the design plan via powerpoint.
+
+<%= image_tag("Slide01.jpg") %>

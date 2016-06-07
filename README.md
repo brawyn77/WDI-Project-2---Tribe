@@ -1,0 +1,40 @@
+TRIBE == README
+
+This project is the first stage of an MVP aiming to be used as a community building tools
+specifically aimed at new greenfield communities. The first stage only includes the initiation
+and management of users and their profiles.
+It consists of a CRUD application for both users and their profiles.
+It utilises the postcode API located here: http://v0.postcodeapi.com.au/ to manage both
+postcode/suburb translation but more specifically a way of identifying a radius of surrounding
+suburbs using a radius parameter.
+
+* Ruby version - 2.2.2
+
+* System dependencies - Requires HTTParty and pg gems
+
+* Database  - postgresql
+
+* The database test can be run using 'rake test'
+
+Testing specs for Tribe:
+* User name:text - must be present and between 1 - 50 chars
+* User email:string - must be present and between 1 - 50 chars
+* User password:string - must be present and between 8 - 50 chars
+* User password_confirmation:string - must be present and between 8 - 50 chars
+* user_id must be present
+
+* Profile name:text - must come from User table
+* Profile username:string - must be present and between 8 - 50 chars
+* Profile address:text - must be present and between 8 - 50 chars
+* Profile suburb:string - must be present and between 2 - 30 chars
+* Profile postcode:integer - must be present and a integer and be 4 numbers
+* Profile search_radius:integer - must be present and a integer between 0 - 2000
+* Profile age:integer - must be present and a integer between 0 - 130
+* Profile sex:string - must be present and be between 1 - 4 chars
+* Profile interests:text - must be present and be between 1 -100 chars
+
+The second stage will be completed outside this project.
+
+This is the design plan via powerpoint.
+
+<img src='Slide01.jpg'>
